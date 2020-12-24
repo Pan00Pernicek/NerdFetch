@@ -17,7 +17,8 @@ case $ostype in
    else
    os="${PRETTY_NAME}"
    fi
-   shell=${SHELL##*/};;
+   shell="$SHELL"
+   #shell=${SHELL##*/};;
  "Darwin"*)
    while IFS='<>' read -r _ _ line _; do
     case $line in
