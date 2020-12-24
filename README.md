@@ -3,8 +3,8 @@
  
  Fork of Nerdfetch
 
-<!-- ![Screenshot](https://i.imgur.com/and9kuQ.png) -->
-![Screenshot](https://i.imgur.com/PPfnHqN.png)
+<!-- ![Screenshot](https://github.com/Pan00Pernicek/rfetch/raw/master/Screenshot_20201225_002830.png) -->
+![Screenshot](https://github.com/Pan00Pernicek/rfetch/raw/master/Screenshot_20201225_002830.png)
 
 ### Dependencies:
 
