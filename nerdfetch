@@ -1,5 +1,4 @@
 #!/bin/sh
-
 ## OS/ENVIRONMENT INFO DETECTION
 
 ostype="$(uname)"
@@ -40,7 +39,7 @@ esac
 
 ## PACKAGE MANAGER AND PACKAGES DETECTION
 if [ "$1" = "-a" ]; then
-	managers=$(which nix-env pkg yum zypper dnf rpm apt brew port pacman xbps-query  emerge cave apk kiss pmm /usr/sbin/slackpkg yay paru cpm eopkg 2>/dev/null)
+	managers=$(which nix-env pkg yum zypper dnf rpm apt brew port pacman xbps-query emerge cave apk kiss pmm /usr/sbin/slackpkg yay paru cpm eopkg 2>/dev/null)
 	for manager in $managers
 	do
 		manager=${manager##*/}
@@ -57,7 +56,7 @@ if [ "$1" = "-a" ]; then
 			yay) packages="$(yay -Q | wc -l)";;
 			paru) packages="$(paru -Q | wc -l)";;
 			kiss) packages="$(kiss list | wc -l)";;
-			pkg|emerge) packages="$(qlist -I | wc -l)";;
+			emerge) packages="$(qlist -I | wc -l)";;
 			cave) packages="$(cave show installed-slots | wc -l)";;
 			xbps-query) packages="$(xbps-query -l | wc -l)";;
 			nix-env) packages="$(nix-store -q --requisites /run/current-system/sw | wc -l)";;
@@ -72,7 +71,7 @@ if [ "$1" = "-a" ]; then
 	tot="$tot$packages ($manager) "
 	done
 else
-	manager=$(which nix-env pkg yum zypper dnf rpm apt brew port pacman xbps-query  emerge cave apk kiss pmm /usr/sbin/slackpkg yay paru cpm pmm eopkg 2>/dev/null)
+	manager=$(which nix-env pkg yum zypper dnf rpm apt brew port pacman xbps-query emerge cave apk kiss pmm /usr/sbin/slackpkg yay paru cpm pmm eopkg 2>/dev/null)
 	manager=${manager##*/}
 	case $manager in
 		cpm) packages="$(cpm C)";;
@@ -87,7 +86,7 @@ else
 		yay) packages="$(yay -Q | wc -l)";;
 		paru) packages="$(paru -Q | wc -l)";;
 		kiss) packages="$(kiss list | wc -l)";;
-		pkg|emerge) packages="$(qlist -I | wc -l)";;
+		emerge) packages="$(qlist -I | wc -l)";;
 		cave) packages="$(cave show installed-slots | wc -l)";;
 		xbps-query) packages="$(xbps-query -l | wc -l)";;
 		nix-env) packages="$(nix-store -q --requisites /run/current-system/sw | wc -l)";;
